@@ -1,0 +1,102 @@
+# === Python related ===
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# === Virtual environments ===
+# Common names for virtualenvs
+venv/
+ENV/
+env/
+.venv/
+venv.bak/
+
+# pyenv
+.python-version
+
+# === IDEs / Editors ===
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Logs / Databases / caches ===
+*.log
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+.cache/
+.coverage
+coverage.xml
+htmlcov/
+tox/
+nose2-junit-report.xml
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Streamlit ===
+# Streamlit runtime cache and state
+.streamlit/
+
+# === Secrets / env files ===
+.env
+.env.*
+secrets.json
+credentials.json
+
+# === Data & large artifacts ===
+# By default ignore generated binary artifacts and large data. If you want to track CSVs, remove the data/ lines below.
+data/*.parquet
+data/*.pkl
+data/*.sqlite
+# Uncomment to ignore CSVs too (recommended for large generated files)
+# data/*.csv
+
+# === Images / screenshots (optional) ===
+# If you add example screenshots to the repo for README, remove this line
+assets/screenshots/
+
+# === Misc ===
+node_modules/
+dist/
+
+# Editor swap / temp files
+*~
+# vim swap
+.swp
+
+# Allow users to keep their own overrides
+!.gitignore
