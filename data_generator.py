@@ -3,10 +3,12 @@ import random
 import pandas as pd
 import numpy as np
 
+DATA_DIR = 'data'
+
 random.seed(42)
 np.random.seed(42)
 
-os.makedirs('data', exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
 
 first_names = [
     'Ava', 'Liam', 'Noah', 'Emma', 'Olivia', 'Elijah', 'Charlotte', 'Amelia', 'Sophia', 'Mason',
@@ -47,7 +49,7 @@ for i in range(1, 121):
     })
 
 customer_df = pd.DataFrame(customers)
-customer_df.to_csv('data/customers.csv', index=False)
+customer_df.to_csv(os.path.join(DATA_DIR, 'customers.csv'), index=False)
 
 products = []
 for i, product in enumerate(product_names, start=1):
@@ -63,7 +65,7 @@ for i, product in enumerate(product_names, start=1):
     })
 
 product_df = pd.DataFrame(products)
-product_df.to_csv('data/products.csv', index=False)
+product_df.to_csv(os.path.join(DATA_DIR, 'products.csv'), index=False)
 
 transactions = []
 for row in customers:
@@ -77,6 +79,21 @@ for row in customers:
     })
 
 transaction_df = pd.DataFrame(transactions)
-transaction_df.to_csv('data/transactions.csv', index=False)
+transaction_df.to_csv(os.path.join(DATA_DIR, 'transactions.csv'), index=False)
 
-print('Generated data/customers.csv, data/products.csv, data/transactions.csv')
+print(f'Generated {os.path.join(DATA_DIR, "customers.csv")}, {os.path.join(DATA_DIR, "products.csv")}, {os.path.join(DATA_DIR, "transactions.csv")}')
+
+
+def main():
+    # Basic sanity checks
+    assert not customer_df.empty, 'customers dataframe is empty'
+    assert not product_df.empty, 'products dataframe is empty'
+    assert not transaction_df.empty, 'transactions dataframe is empty'
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Error while generating data:', e)
+        raise
